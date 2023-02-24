@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"time"
 
@@ -24,7 +23,6 @@ func generateMetrics(metrics []config.Metric) {
 		case "counter":
 			NewCounterMetric(metric)
 		case "gauge":
-			fmt.Println("came here")
 			NewGaugeMetric(metric)
 		case "histogram":
 			NewHistogramMetric(metric)
