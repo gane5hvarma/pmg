@@ -1,0 +1,29 @@
+metrics:
+  - name: total_count
+    type: counter
+    help: "total count of alert"
+    labels: ["name"]
+    generators:
+      - value: 0
+        freq: 5
+        labels:
+          name: get
+  - name: room_temparature
+    type: gauge
+    help: "room temparature"
+    labels: ["name"]
+    generators:
+      - value: 10
+        freq: 5
+        method: add
+        labels:
+          name: c
+  - name: request_latency
+    type: histogram
+    help: "request latency"
+    labels: ["name"]
+    generators:
+      - value: 100
+        freq: 5
+        labels:
+          name: get
